@@ -4,7 +4,7 @@ const Person = require('../models/Person')
 
 router.post('/', async (req, res) => {
 
-    const {name, salary, approved} = req.body
+    const {name, salary, email, contract, phone} = req.body
     
     if(!name){
         res.status(422).json({error: 'O nome é obrigatorio!'})
@@ -12,9 +12,11 @@ router.post('/', async (req, res) => {
     }
 
     const person = {
-        name,
-        salary,
-        approved
+        name, 
+        salary, 
+        email, 
+        contract, 
+        phone
     }
  
     try {
@@ -59,12 +61,14 @@ router.get('/:id', async (req, res) => {
 router.patch('/:id', async (req, res) => {
     const id = req.params.id
 
-    const {name, salary, approved} = req.body
+    const {name, salary, email, contract, phoneq} = req.body
 
     const person = {
-        name,
-        salary,
-        approved
+        name, 
+        salary, 
+        email, 
+        contract, 
+        phone
     }
 
     try{
