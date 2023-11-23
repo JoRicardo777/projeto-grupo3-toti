@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         res.status(422).json({error: 'O nome é obrigatorio!'})
         return
     }
-
+ 
     const person = {
         name, 
         salary, 
